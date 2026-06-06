@@ -1,111 +1,105 @@
-# Customer Churn Analysis and Prediction
+# 📊 Customer Churn Analysis and Prediction
 
-This project was developed as part of my **Machine Learning Internship at SaiKet Systems**.
+A Machine Learning internship project developed as part of my Machine Learning Internship at SaiKet Systems.
 
-The project focuses on analyzing telecom customer data and building machine learning models to predict whether a customer is likely to churn or not. The main goal is to identify at-risk customers so that businesses can take early retention actions.
+This project predicts whether a telecom customer is likely to churn using customer service, billing, and contract-related data. The final model is also deployed as an interactive Streamlit web app.
 
-## Project Overview
+## 🚀 Live Demo
 
-Customer churn means when a customer stops using a company's service. In the telecom industry, predicting churn is important because retaining existing customers is usually more cost-effective than acquiring new ones.
+Streamlit App:
+https://customer-churn-analysis-and-prediction-raunak.streamlit.app
 
-In this project, the Telco Customer Churn dataset was used to analyze customer behavior and predict churn using machine learning models.
+## 📌 Project Overview
 
-## Objectives
+Customer churn means when a customer stops using a company’s service. For telecom companies, predicting churn is important because it helps identify at-risk customers early and take retention actions before they leave.
 
-* Load and understand the telecom customer churn dataset
-* Handle missing values and clean the data
-* Encode categorical features for machine learning
-* Split the dataset into training and testing sets
-* Train multiple machine learning models
-* Evaluate models using classification metrics
-* Select the best final model for churn prediction
+In this project, I analyzed the Telco Customer Churn dataset, trained multiple machine learning models, compared their performance, selected the final model, and deployed it as a working web application.
 
-## Dataset
+## 🎯 Internship Task Requirements
 
-The dataset contains customer information such as:
+The task given by SaiKet Systems was to complete a Customer Churn Analysis and Prediction project covering:
 
-* Gender
-* Senior citizen status
-* Partner and dependents
-* Tenure
-* Phone and internet services
-* Contract type
-* Payment method
-* Monthly charges
-* Total charges
-* Churn status
+- Data preparation and preprocessing
+- Missing value handling
+- Categorical variable encoding
+- 80:20 train-test split
+- Feature selection
+- Model selection
+- Model training
+- Model evaluation using Accuracy, Precision, Recall, F1-score, and ROC-AUC
 
-The target variable is:
+## ✅ Tasks Performed for Project Development
 
-```text
-Churn
-```
+Along with completing the assigned internship requirements, I also performed additional development work to make the project more complete and practical:
 
-Where:
+- Cleaned and prepared the Telco Customer Churn dataset
+- Converted TotalCharges into numeric format and handled missing values
+- Removed unnecessary columns like customerID
+- Encoded categorical features using OneHotEncoder
+- Scaled numerical features using StandardScaler
+- Trained and compared Logistic Regression, Random Forest, and XGBoost
+- Evaluated models using Accuracy, Precision, Recall, F1-score, and ROC-AUC
+- Selected Logistic Regression as the final model based on Recall, F1-score, and ROC-AUC
+- Saved the trained model using Joblib
+- Built an interactive Streamlit web app
+- Deployed the app using Streamlit Community Cloud
+- Added GitHub documentation for better project presentation
 
-```text
-Yes = Customer churned
-No = Customer did not churn
-```
+## 🧠 Models Used and Performance
 
-## Technologies Used
+| Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
+|---|---:|---:|---:|---:|---:|
+| Logistic Regression | 0.738 | 0.504 | 0.783 | 0.614 | 0.841 |
+| Random Forest | 0.784 | 0.623 | 0.473 | 0.538 | 0.819 |
+| XGBoost | 0.752 | 0.526 | 0.668 | 0.589 | 0.819 |
 
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
-* Scikit-learn
-* XGBoost
-* Joblib
-* Jupyter Notebook
+## 🏆 Final Model
 
-## Machine Learning Models Used
+Logistic Regression was selected as the final model.
 
-The following models were trained and compared:
+Although Random Forest achieved the highest accuracy, Logistic Regression performed better in Recall, F1-score, and ROC-AUC. For churn prediction, Recall is especially important because the goal is to correctly identify customers who are likely to leave.
 
-1. Logistic Regression
-2. Random Forest Classifier
-3. XGBoost Classifier
+## 🛠️ Tech Stack
 
-## Model Evaluation Metrics
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Joblib
+- Streamlit
 
-The models were evaluated using:
+## 📁 Repository Files
 
-* Accuracy
-* Precision
-* Recall
-* F1-score
-* ROC-AUC score
-* Confusion Matrix
-* ROC Curve
+- sks_intern_project.ipynb
+- app.py
+- requirements.txt
+- runtime.txt
+- README.md
+- Telco_Customer_Churn_Dataset.csv
+- customer_churn_logistic_regression_model.pkl
 
-## Final Model Selection
+## ▶️ How to Run Locally
 
-Although Random Forest achieved the highest accuracy, **Logistic Regression** was selected as the final model because it achieved the highest **Recall, F1-score, and ROC-AUC**.
+Clone the repository:
 
-For customer churn prediction, Recall and ROC-AUC are more important than accuracy because the main goal is to correctly identify customers who are likely to leave.
+git clone https://github.com/raunak1303-dotcom/Customer-Churn-Analysis-and-Prediction.git
 
-## Final Model Performance
+Move into the project folder:
 
-| Model               | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
-| ------------------- | -------: | --------: | -----: | -------: | ------: |
-| Logistic Regression |    0.738 |     0.504 |  0.783 |    0.614 |   0.841 |
-| Random Forest       |    0.784 |     0.623 |  0.473 |    0.538 |   0.819 |
-| XGBoost             |    0.752 |     0.526 |  0.668 |    0.589 |   0.819 |
+cd Customer-Churn-Analysis-and-Prediction
 
-## Final Output
+Install dependencies:
 
-The final trained Logistic Regression model was saved using Joblib as:
+pip install -r requirements.txt
 
-```text
-customer_churn_logistic_regression_model.pkl
-```
+Run the Streamlit app:
 
-This model can be reused later for churn prediction on new customer data.
+streamlit run app.py
 
-## Project Conclusion
+## 📌 Conclusion
 
-This project successfully analyzes telecom customer churn and builds predictive machine learning models. Logistic Regression was selected as the final model because it performed best on Recall, F1-score, and ROC-AUC, making it suitable for identifying customers who are likely to churn.
+This project successfully predicts telecom customer churn using machine learning. Logistic Regression was chosen as the final model because it performed best on the most important churn-focused metrics: Recall, F1-score, and ROC-AUC.
 
-The project can help telecom companies detect high-risk customers early and take retention-focused actions.
+The project was further improved by deploying it as a live Streamlit web app, making the churn prediction system interactive and easy to use.
